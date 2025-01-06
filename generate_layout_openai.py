@@ -1,9 +1,11 @@
 from pydantic import BaseModel
 from openai import OpenAI
+import argparse
+import time
 
 from utils import *
 
-def generate_layout(description):
+def generate_layout(description,model):
   client = OpenAI()
   # a single object (using tuple)
   # class Object(BaseModel):
@@ -41,7 +43,7 @@ def generate_layout(description):
   )
 
   completion = client.beta.chat.completions.parse(
-    model="gpt-4o",
+    model=model,
     messages=messages,
     response_format=ObjectLayout,
   )
@@ -80,12 +82,30 @@ def generate_layout(description):
 
 # running the script
 if __name__ == "__main__":
+  # getting command line arguments
+  parser = argparse.ArgumentParser()
+  parser.add_argument(
+      "--model",
+      type=str,
+      default="llama3",
+      help="The ollama model to use"
+  )
+
+  args = parser.parse_args()
+  model = args.model
+
   # getting inputs
   description = input("Please your describe image: ")
   image_name = input("Enter a name for your image to save the layout: ")
 
+  start_time = time.time()
+
   # getting layout from gpt-4o
-  names,boxes = generate_layout(description)
+  names,boxes = generate_layout(description,model)
+
+  end_time = time.time()
+  runtime = end_time - start_time
+  print(f"\nRuntime: {runtime:.2f} seconds")
 
   output_folder = "./outputs"
   draw_box(names,boxes,output_folder,image_name+".jpg")
