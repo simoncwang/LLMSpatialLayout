@@ -45,5 +45,19 @@ I used the following for my short experiment:
 
 ### Generating layouts
 
-Both scripts (OpenAI and Ollama) run the same, simply specify the model as a command line argument
+Both scripts (OpenAI and Ollama) run the same, simply specify the model as a command line argument. Example here shown for qwen2.5:7b through ollama.
+
+        python3 generate_layout_ollama.py --model qwen2.5:7b
     
+NOTE: when using the OpenAI script please only use the following models as specified in the [OpenAI API Docs](https://platform.openai.com/docs/guides/structured-outputs?context=ex1#how-to-use)
+* o1-2024-12-17 and later
+* gpt-4o-mini-2024-07-18 and later
+* gpt-4o-2024-08-06 and later
+
+## Results
+
+
+
+
+## Conclusions & Further Work
+
