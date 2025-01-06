@@ -35,7 +35,7 @@ If using Ollama, first check that your Ollama version is >= 0.5.1 because struct
 
 If your version is older, try to upgrade your version as specified here: [Ollama docs](https://github.com/ollama/ollama/blob/main/docs/faq.md). I had to manually uninstall and re-install a new version (0.5.4) from the Ollama website.
 
-Finally, if using Ollama be sure to pull the models you want to use first before running the scripts.
+Then, be sure to pull the models you want to use first before running the scripts.
 
     ollama pull [model name]
 
@@ -44,8 +44,17 @@ I used the following for my short experiment:
 * llama3.1:8b
 * qwen2.5:7b
 
+For OpenAI, first set your OpenAI API key:
+
+        export OPENAI_API_KEY="your_api_key_here"
+
+for Windows:
+
+        setx OPENAI_API_KEY "your_api_key_here"
 
 ### Generating layouts
+
+#### Commands
 
 Both scripts (OpenAI and Ollama) run the same, simply specify the model as a command line argument. Example here shown for qwen2.5:7b through ollama.
 
@@ -56,8 +65,48 @@ When using the OpenAI script **please only use the following models** as specifi
 * gpt-4o-mini-2024-07-18 and later
 * gpt-4o-2024-08-06 and later
 
+#### Usage
+
+Once the script is run, you will first be prompted for a description of your desired image. Example: "Three colorful parrots perching on cherry blossom tree branch"
+
+Then, enter a name for the file you want the result to be saved as (you do not need to specify an extension, just the name). Example: "threeparrots"
+
+Finally, the **raw structured output will be printed out in the terminal for reference**, and the image with drawn/labeled bounding boxes will be **saved in the ./outputs folder.**
+
+
 ## Results
 
+Here are several example results using different models and prompts. Some of the prompts are taken from the paper results and will be denoted with an asterisk *.
+
+### OpenAI (gpt-4o)
+
+#### *Prompt 1: "Three colorful parrots perching on cherry blossom tree branch"
+
+Raw output:
+
+        -----Image Description-----
+
+        Three colorful parrots perching on cherry blossom tree branch
+        
+        -----Model Output-----
+        
+        objects=[Object(name='Parrot 1', x0=70, y0=100, x1=170, y1=200), Object(name='Parrot 2', x0=200, y0=100, x1=300, y1=200), Object(name='Parrot 3', x0=330, y0=100, x1=430, y1=200), Object(name='Cherry Blossom Branch', x0=50, y0=250, x1=462, y1=290)]
+
+![threeparrots](https://github.com/user-attachments/assets/09db991e-539c-48cb-830d-479e5a29f167)
+
+#### Prompt 1: "two rabbits enjoying a birthday cake on a hill at sunset"
+
+Raw output:
+
+        -----Image Description-----
+
+        two rabbits enjoying a birthday cake on a hill at sunset
+        
+        -----Model Output-----
+        
+        objects=[Object(name='Rabbit 1', x0=50, y0=256, x1=150, y1=356), Object(name='Rabbit 2', x0=190, y0=256, x1=290, y1=356), Object(name='Birthday Cake', x0=110, y0=306, x1=230, y1=356), Object(name='Sunset', x0=0, y0=0, x1=512, y1=150), Object(name='Hill', x0=0, y0=206, x1=512, y1=512)]
+
+![rabbitcake](https://github.com/user-attachments/assets/10a4e3cb-31a5-4f26-8aa9-2bb0794a9327)
 
 
 
