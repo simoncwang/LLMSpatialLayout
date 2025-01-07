@@ -142,6 +142,16 @@ Below are the results of my benchmark evaluation, with the parentheses showing i
 | llama2:13b | 100 (+1.5) | 84.5 (+0.5) | 3855.51 |
 
 NOTE: the runtimes are included for reference, but the long times for Ollama models are likely due to the limitations of my personal laptop (M2 Mac Air, 24Gb) and will vary depending on your machine. Similarly, I was unable to test any models larger than the 8-13 billion parameter range.
+Running one model takes up the majority of my RAM as wired memory as seen here:
+
+![ollama_ram](https://github.com/user-attachments/assets/45d662d8-d8f9-4d5d-8464-96e3fa238d80)
+
 
 ## Conclusions & Further Work
+
+In conclusion, I demonstrate how leveraging new structured output capabilities of LLMs can improve upon the layout generation portion of the Attention Refocusing method. By evening the playing field in terms of format consistency in this way, we now have many more options to what kinds of models we can use,
+when previously only the best or largest models could achieve good performance at this task. More work and investigation can be done to further test the capability of this approach, and as mentioned earlier I have yet to implement actual image generation based on these layouts. By plugging int this
+layout generation tool to the diffusion models used in the paper, we can test if the smaller models can actually produce better results in terms of adherence to text prompts in addition to producing valid layouts. 
+
+
 
