@@ -41,7 +41,7 @@ Then, be sure to pull the models you want to use first before running the script
     ollama pull [model name]
 
 I used the following for my short experiment:
-* llama3:8b
+* llama2:13b
 * llama3.1:8b
 * qwen2.5:7b
 
