@@ -115,6 +115,32 @@ Raw output:
 
 ![momstroller](https://github.com/user-attachments/assets/fe8719a4-3c43-49cb-834e-46946c25668f)
 
+## Evaluation
+
+In section "4.5. Large language model evaluation", the authors evaluate how several LLMs perform at the layout generation task. They evaluated the following metrics: format (correctness of response format), valid (validity of bounding boxes), and correctness (output matches the text prompt).
+They find that GPT4 is the best performing with scores of 98.5%, 98.5%, and 88.5% on each metric respectively.
+
+To replicate these results and test the improvements of using structured outputs in my scripts, I implement the evaluation script. I adhere as much as possible to the evaluation method described in the paper, randomly sampling 200 prompts from the four HRS categories that are provided in the paper repo.
+Then, following the metric descriptions I evaluate several models.
+
+To run the evaluation yourself, use the following command:
+
+        python3 evaluation.py --model model_name --type model_type
+
+* the model_type argument can be either "openai" or "ollama" depending on the model service used
+* again, for Ollama models you must first use ollama pull to install a model, then specify the model_name argument exactly as the name is written in Ollama (e.g. "llama2:13b)
+
+### Results
+
+Below are the results of my benchmark evaluation, with the parentheses showing improvement over the paper results for Llama 2 13B.
+
+| Model | Format (%) | Valid (%) | Runtime (s) |
+| :--- | :---: |:---: | :---: |
+| gpt-4o | 100 | 98.5 | 450.1 |
+| llama3.1:8b | 100 | 89 | 4412.94 |
+| qwen2.5:7b | 100 | 99.5 | 5106.8 |
+| llama2:13b | 100 (+1.5) | 84.5 (+0.5) | 3855.51 |
+
 
 
 ## Conclusions & Further Work
