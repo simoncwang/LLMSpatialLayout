@@ -1,6 +1,8 @@
 # LLM Spatial Layout
 
-Using LLM structured output capabilities to generate reliable spatial layouts from image descriptions. An extension of the GPT4 based box layout generation from the amazing [Grounded Text-to-Image Synthesis with Attention Refocusing](https://attention-refocusing.github.io/) paper.
+Using LLM structured output capabilities to **generate reliable spatial layouts from image descriptions.**
+
+An extension of the GPT4 based box layout generation from the amazing [Grounded Text-to-Image Synthesis with Attention Refocusing](https://attention-refocusing.github.io/) paper.
 
 ## Approach & Motivation
 
