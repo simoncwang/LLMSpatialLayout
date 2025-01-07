@@ -5,7 +5,7 @@ import time
 
 from utils import *
 
-def generate_layout(description,model):
+def generate_layout(description,model,eval_mode=False):
   client = OpenAI()
   # a single object (using tuple)
   # class Object(BaseModel):
@@ -57,11 +57,12 @@ def generate_layout(description,model):
   # parse the layout (auto parsing from openai)
   layout = layout.parsed
 
-  # printing out the description and model output
-  print("\n-----Image Description-----\n")
-  print(description)
-  print("\n-----Model Output-----\n")
-  print(layout)
+  # printing out the description and model output if not in eval mode
+  if not eval_mode:
+    print("\n-----Image Description-----\n")
+    print(description)
+    print("\n-----Model Output-----\n")
+    print(layout)
 
 
   # returning the names of objects and their corresponding bounding boxes

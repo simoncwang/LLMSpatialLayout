@@ -5,7 +5,7 @@ import time
 
 from utils import *
 
-def generate_layout(description,model):
+def generate_layout(description,model,eval_mode=False):
 
 
   # using separate fields
@@ -45,12 +45,12 @@ def generate_layout(description,model):
   )  
   layout = ObjectLayout.model_validate_json(response.message.content)
 
-  # printing out the description and model output
-  print("\n-----Image Description-----\n")
-  print(description)
-  print("\n-----Model Output-----\n")
-  print(layout)
-
+  # printing out the description and model output if not in eval mode
+  if not eval_mode:
+    print("\n-----Image Description-----\n")
+    print(description)
+    print("\n-----Model Output-----\n")
+    print(layout)
 
   # returning the names of objects and their corresponding bounding boxes
   object_names = []
