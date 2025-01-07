@@ -81,7 +81,7 @@ if __name__ == "__main__":
     model = args.model
     type = args.type
     samples = args.samples
-    seed = 42
+    seed = 52
 
     # using pandas to read each dataset and sampling random 50 prompts from each (default is 50 each can change with samples)
     colors = pd.read_csv("./prompts/colors_composition_prompts.csv").sample(n=samples,random_state=seed)
@@ -135,6 +135,6 @@ if __name__ == "__main__":
     overall_runtime = overall_end_time-overall_start_time
 
     print(f"\n-----OVERALL RESULTS-----\n")
-    print(f"Overall Runtime: {runtime:.2f} seconds")
+    print(f"Overall Runtime: {overall_runtime:.2f} seconds")
     print(f"Overall Format Accuracy: {overall_format_accuracy * 100:.2f}%")
     print(f"Overall Validness Accuracy: {overall_valid_accuracy * 100:.2f}%")
