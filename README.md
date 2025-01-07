@@ -75,9 +75,9 @@ Finally, the **raw structured output will be printed out in the terminal for ref
 
 ## Results
 
-Here are several example results using different models and prompts. Some of the prompts are taken from the paper results and will be denoted with an asterisk *.
+Here are several example results using different models and prompts. Some of the prompts are taken from the paper results and will be denoted with an asterisk *. All results here are generated with gpt-4o, but results from other models can be found already included in the outputs folder!
 
-### OpenAI (gpt-4o)
+Several of the examples I created my self test if the models understand object relationships and interactions. As mentioned in my review of this paper, a potential drawback of the box-based attention refocusing I think could be investigated further is how it affects occlusions and object interactions.
 
 #### *Prompt 1: "Three colorful parrots perching on cherry blossom tree branch"
 
@@ -93,7 +93,11 @@ Raw output:
 
 ![threeparrots](https://github.com/user-attachments/assets/09db991e-539c-48cb-830d-479e5a29f167)
 
-#### Prompt 1: "two rabbits enjoying a birthday cake on a hill at sunset"
+#### *Prompt 2: "a horse below a car."
+
+![horsecar](https://github.com/user-attachments/assets/1f60582a-ec50-4efe-aa5e-66e401aaccd0)
+
+#### Prompt 3: "two rabbits enjoying a birthday cake on a hill at sunset"
 
 Raw output:
 
@@ -106,6 +110,10 @@ Raw output:
         objects=[Object(name='Rabbit 1', x0=50, y0=256, x1=150, y1=356), Object(name='Rabbit 2', x0=190, y0=256, x1=290, y1=356), Object(name='Birthday Cake', x0=110, y0=306, x1=230, y1=356), Object(name='Sunset', x0=0, y0=0, x1=512, y1=150), Object(name='Hill', x0=0, y0=206, x1=512, y1=512)]
 
 ![rabbitcake](https://github.com/user-attachments/assets/10a4e3cb-31a5-4f26-8aa9-2bb0794a9327)
+
+#### Prompt 4: “mother pushing a stroller with a baby inside”
+
+![momstroller](https://github.com/user-attachments/assets/fe8719a4-3c43-49cb-834e-46946c25668f)
 
 
 
