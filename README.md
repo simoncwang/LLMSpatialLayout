@@ -138,8 +138,8 @@ Below are the results of my benchmark evaluation, with the parentheses showing i
 
 | Model | Format (%) | Valid (%) | Runtime (s) |
 | :--- | :---: |:---: | :---: |
-| gpt-4o | 100 | 99 | 108.65 |
-| llama3.1:8b | 100 | 89 | 4412.94 |
+| gpt-4o | 100 | 99 | 528.12 |
+| llama3.1:8b | 100 | 89 | 4613.76 |
 | qwen2.5:7b | 100 | 99.5 | 5106.8 |
 | llama2:13b | 100 (+1.5) | 84.5 (+0.5) | 3855.51 |
 
