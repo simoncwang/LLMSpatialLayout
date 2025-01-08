@@ -138,10 +138,10 @@ Below are the results of my benchmark evaluation, with the parentheses showing i
 
 | Model | Format (%) | Valid (%) | Runtime (s) |
 | :--- | :---: |:---: | :---: |
+| qwen2.5:7b | 100 | 100 | 3197.89 |
 | gpt-4o | 100 | 99 | 528.12 |
-| llama3.1:8b | 100 | 89 | 4613.76 |
-| qwen2.5:7b | 100 | 99.5 | 5106.8 |
-| llama2:13b | 100 (+1.5) | 84.5 (+0.5) | 3855.51 |
+| llama3.1:8b | 100 | 88 | 2561.33 |
+| llama2:13b | 100 (+1.5) | 87 (+3) | 4613.76 |
 
 NOTE: the runtimes are included for reference, but the long times for Ollama models are likely due to the limitations of my personal laptop (M2 Mac Air, 24Gb) and will vary depending on your machine. Similarly, I was unable to test any models larger than the 8-13 billion parameter range.
 Running one model takes up the majority of my RAM as wired memory as seen here:
